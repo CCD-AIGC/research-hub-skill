@@ -173,7 +173,10 @@ def normalize_engine(track, payload, requested, from_date, to_date):
                 status["outside_window"] = status.get("outside_window", 0) + 1
                 continue
             confidence = item.get("date_confidence", "low")
-            dated = bool(stamp and confidence in {"high", "med"})
+            observed_only = track == "cn" and bool(
+                re.search(r"热榜|热搜", item.get("why_relevant") or "") or
+                re.search(r"/hot/|/hot\?", item["url"]))
+            dated = bool(stamp and confidence in {"high", "med"] and not observed_only)
             title = item.get("title") or item.get("text") or item.get("url")
             snippet = next((item.get(k) for k in (
                 "snippet", "body", "description", "desc", "excerpt", "abstract", "text")
@@ -183,8 +186,10 @@ def normalize_engine(track, payload, requested, from_date, to_date):
                 "track": track, "source": sid, "source_id": item.get("item_id") or item.get("id"),
                 "title": plain(title, 500), "snippet": plain(snippet),
                 "url": item["url"], "published_at": stamp.isoformat() if stamp else None,
-                "date_status": "recent" if dated else ("low-confidence" if stamp else "unknown"),
-                "date_confidence": confidence, "date_kind": "engine-reported",
+                "date_status": "recent" if dated else ("observed-only" if stamp and observed_only
+                                                       else ("low-confidence" if stamp else "unknown")),
+                "date_confidence": confidence,
+                "date_kind": "observation" if observed_only else "engine-reported",
                 "author": item.get("author") or item.get("author_name") or
                           item.get("author_handle") or item.get("channel_name") or item.get("source_name"),
                 "engagement": item.get("engagement") or {},
@@ -439,7 +444,7 @@ def main(argv=None):
     if any(s["state"] not in SUCCESS for s in statuses):
         warnings.append("存在受限、降级、超时或未配置来源；失败不代表该平台无人讨论。详见 source_status。")
     if any(s.get("undated", 0) for s in statuses):
-        warnings.append("日期未知、低置信日期和仅更新时间的条目作为背景线索，不能计作近期发文。")
+        warnings.append("日期未知、低置信日期、热榜观察日期和仅更新时间的条目作为背景线索，不能计作近期发文。")
     if args.scope in {"all", "rss"}:
         warnings.append("RSS 仅覆盖各订阅当前返回的文章，不能保证完整的历史时间窗口；互动数据为空不代表互动为零。")
     if args.scope in {"all", "global"} and not args.global_plan:

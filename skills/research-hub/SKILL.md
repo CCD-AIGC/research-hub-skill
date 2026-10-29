@@ -55,7 +55,7 @@ python3 "$SKILL_DIR/scripts/research.py" --diagnose
 
 分析前读取 JSON 的 `source_status` 与 `warnings`，再使用 `evidence[].appearances` 中的证据：
 
-- 仅 `date_status=recent` 的出现记录可支撑“该时间窗口内发布”的说法；日期未知、低置信日期、仅有更新时间均保留为背景线索。
+- 仅 `date_status=recent` 的出现记录可支撑“该时间窗口内发布”的说法；日期未知、低置信日期、热榜观察时间、仅有更新时间均保留为背景线索。
 - `engagement` 为空表示未提供，真实的 0 才表示零。不把不同平台点赞、播放、收藏简单相加，不把上游排序分当作销量或市场规模。
 - 公开搜索兜底、热榜、超时、登录失败与正常零结果要区别说明；`partial` 不能包装成平台全量覆盖。
 - 同一链接被 RSS 与社区转发收录，只是多渠道出现。转载和同源报道也不自动构成独立验证，`independent_confirmation=not-assessed` 需由模型判断。

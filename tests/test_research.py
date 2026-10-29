@@ -100,6 +100,16 @@ class EvidenceTests(unittest.TestCase):
                                                date(2026, 10, 1), date(2026, 10, 29))
         self.assertEqual(status[0]["state"], "not-reported")
 
+    def test_hotlist_observation_date_is_not_post_publication(self):
+        payload = {"douyin": [{"url": "https://www.douyin.com/hot/123",
+                    "text": "Topic", "date": "2026-10-29", "date_confidence": "high",
+                    "why_relevant": "抖音热榜第1位"}],
+                   "source_status": {"douyin": {"state": "ok", "via": {"hot-list": 1}}}}
+        rows, statuses = research.normalize_engine("cn", payload, ["douyin"],
+                                                    date(2026, 10, 1), date(2026, 10, 29))
+        self.assertEqual(rows[0]["date_status"], "observed-only")
+        self.assertEqual(statuses[0]["recent"], 0)
+
     def test_global_error_is_not_quiet_source(self):
         _, status = research.normalize_engine("global", {
             "items_by_source": {"reddit": []},
