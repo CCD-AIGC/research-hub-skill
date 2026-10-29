@@ -10,6 +10,7 @@
   },
   "china": {
     "project": "last30days-cn",
+    "upstream_url": "https://github.com/Jesseovo/last30days-skill-cn",
     "version": "4.0.0-cn",
     "snapshot_date": "2026-10-29",
     "attribution": "Matt Van Horn; Jesse (https://github.com/Jesseovo)",

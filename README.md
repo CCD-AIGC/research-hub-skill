@@ -1,6 +1,6 @@
 # Research Hub Skill · 全域调研
 
-一个 Codex skill，同步研究国内平台、海外社区与 RSS，支持市场需求、创业验证、竞品口碑和内容起号选题。
+一个 Codex skill，同步研究国内平台、海外社区与 RSS，把真实讨论转成有出处的市场判断、创业验证和内容起号实验。
 
 **内置两个研究引擎与 RSS 采集器，一次安装即可使用基础功能。** 不需要先安装其他 skill。Python 3.12+；RSS 只用标准库。海外的部分来源需要可选 CLI、API Key 或已有登录配置。
 
@@ -32,6 +32,10 @@ npx skills add CCD-AIGC/research-hub-skill --skill research-hub -g -a codex
 国内适配器的覆盖范围不代表所有平台免登录可用。每次运行都会保留正常结果、公开搜索兜底、登录失败、超时等状态。没有日期的搜索线索不会被包装为近期帖子，缺失互动数据不会被填写成 0。
 
 海外代码来自 [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)，国内代码来自已安装的 MIT 中文本地化快照。具体版本、许可与集成修改见 [第三方说明](THIRD_PARTY_NOTICES.md) 及 [引擎来源记录](skills/research-hub/references/engines.json)。本项目不声称得到上游作者背书。
+
+Research Hub 1.1.0 增加了中文商业判断与内容实验方法：从来源覆盖和日期边界开始，区分观察、解释和假设，检查用户情境、替代行为、付费信号和反例，再为商业或内容判断设计低成本验证。来源评估和融合边界见[方法来源记录](skills/research-hub/references/method-sources.md)；按任务使用的流程见[商业与内容分析工作流](skills/research-hub/references/business-content-workflow.md)。
+
+方法调研参考了 [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill) 和 [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills)。dbskill 为 CC BY-NC 4.0，因此未将其技能文本或知识原子复制、改写或打包；新工作流是围绕本项目证据结构独立撰写。Baoyu 为 MIT，本文记录了具体参考范围。
 
 ## 直接运行
 

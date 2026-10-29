@@ -21,7 +21,7 @@ from rss_sources import (SHANGHAI, canonical_url, collect, keywords_match, load_
                          parse_date, plain, valid_url)
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 CN_SOURCES = ("weibo", "xiaohongshu", "bilibili", "zhihu", "douyin", "wechat", "baidu", "toutiao")
 LABELS = dict(zip(CN_SOURCES, ("微博", "小红书", "B站", "知乎", "抖音", "微信公众号", "百度", "头条")))
 SUCCESS = {"ok", "no-results"}
