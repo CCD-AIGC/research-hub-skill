@@ -176,7 +176,7 @@ def normalize_engine(track, payload, requested, from_date, to_date):
             observed_only = track == "cn" and bool(
                 re.search(r"热榜|热搜", item.get("why_relevant") or "") or
                 re.search(r"/hot/|/hot\?", item["url"]))
-            dated = bool(stamp and confidence in {"high", "med"] and not observed_only)
+            dated = bool(stamp and confidence in {"high", "med"} and not observed_only)
             title = item.get("title") or item.get("text") or item.get("url")
             snippet = next((item.get(k) for k in (
                 "snippet", "body", "description", "desc", "excerpt", "abstract", "text")
