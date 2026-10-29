@@ -1,0 +1,72 @@
+[
+  {
+    "name": "少数派",
+    "url": "https://sspai.com/feed",
+    "group": "中文产品与用户需求"
+  },
+  {
+    "name": "人人都是产品经理",
+    "url": "https://www.woshipm.com/feed",
+    "group": "中文产品与用户需求"
+  },
+  {
+    "name": "阮一峰的网络日志",
+    "url": "https://www.ruanyifeng.com/blog/atom.xml",
+    "group": "中文产品与用户需求"
+  },
+  {
+    "name": "V2EX",
+    "url": "https://www.v2ex.com/index.xml",
+    "group": "中文产品与用户需求"
+  },
+  {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "group": "创业与市场"
+  },
+  {
+    "name": "Steve Blank",
+    "url": "https://steveblank.com/feed/",
+    "group": "创业与市场"
+  },
+  {
+    "name": "Lenny’s Newsletter",
+    "url": "https://www.lennysnewsletter.com/feed",
+    "group": "创业与市场"
+  },
+  {
+    "name": "Hacker News",
+    "url": "https://news.ycombinator.com/rss",
+    "group": "创业与市场"
+  },
+  {
+    "name": "Product Hunt",
+    "url": "https://www.producthunt.com/feed",
+    "group": "创业与市场"
+  },
+  {
+    "name": "Seth Godin",
+    "url": "https://seths.blog/feed/",
+    "group": "内容与营销"
+  },
+  {
+    "name": "Buffer Resources",
+    "url": "https://buffer.com/resources/rss/",
+    "group": "内容与营销"
+  },
+  {
+    "name": "Social Media Examiner",
+    "url": "https://www.socialmediaexaminer.com/feed/",
+    "group": "内容与营销"
+  },
+  {
+    "name": "HubSpot Marketing",
+    "url": "https://blog.hubspot.com/marketing/rss.xml",
+    "group": "内容与营销"
+  },
+  {
+    "name": "Creator Science",
+    "url": "https://creatorscience.com/rss/",
+    "group": "内容与营销"
+  }
+]

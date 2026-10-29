@@ -1,0 +1,4 @@
+interface:
+  display_name: "全域调研"
+  short_description: "统一国内平台、海外社区与 RSS，支持市场、创业和内容选题调研"
+  default_prompt: "用 $research-hub 调研这个方向，结合国内平台、海外社区与 RSS，给出有来源的市场判断和内容机会。"

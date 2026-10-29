@@ -1,0 +1,24 @@
+{
+  "overseas": {
+    "project": "mvanhorn/last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "commit": "7efc0ef764765ed9ceff5ce1204462b35b89d680",
+    "version": "3.31.0",
+    "license": "MIT",
+    "file_count": 125,
+    "snapshot_sha256": "4fb41e764726abb33b61fc18eaf070a033b990475bf19eea432627afa81ddf14"
+  },
+  "china": {
+    "project": "last30days-cn",
+    "version": "4.0.0-cn",
+    "snapshot_date": "2026-10-29",
+    "attribution": "Matt Van Horn; Jesse (https://github.com/Jesseovo)",
+    "license": "MIT",
+    "note": "Snapshot of the installed Chinese localization; runtime only, without user configuration or browser data.",
+    "file_count": 40,
+    "snapshot_sha256": "943e5164fec312e679021ace2a33fd7a02b0c4f0fbbe79017e1d0964b3cc24ec",
+    "local_modifications": [
+      "Added --research-only to prevent research topics from dispatching login/setup/hot administrative commands."
+    ]
+  }
+}

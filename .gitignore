@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.log
+work/
+raw/
+evidence.json
+evidence.md
+.no-user-config/
